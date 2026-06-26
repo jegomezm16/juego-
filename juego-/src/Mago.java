@@ -16,7 +16,7 @@ public class Mago extends Personaje {
             "\n✨ Habilidades de %s  [Nivel %d | Maná: %d/%d]\n" +
             "  1. Chispa Mágica                → Daño: %d  | Costo: 5 Maná\n" +
             "  2. Tormenta de %-10s      → Daño: %d  | Costo: 30 Maná\n" +
-            "  3. Escudo Arcano (1 turno)       → Bloquea próximo ataque | Costo: 20 Maná",
+            "  3. Escudo Arcano (1 turno)       → Bloquea próximo ataque | Costo: 20 Maná", //es un texto fijo en la plantilla:
             this.nombre, this.nivel,
             this.mana, this.manaMaximo,
             this.fuerza,
@@ -26,7 +26,7 @@ public class Mago extends Personaje {
 
     @Override
     public String atacar(Personaje objetivo, int tipoAtaque) throws AccionInvalidaException {
-        StringBuilder log = new StringBuilder();
+        StringBuilder log = new StringBuilder(); //recibe a quien atacar el ataque elegido y sin notiene mana sale el error
 
         if (tipoAtaque == 1) {
             if (this.mana < 5)
@@ -84,3 +84,4 @@ public class Mago extends Personaje {
             objetivo.getNombre(), danioReal, objetivo.getVida(), objetivo.getVidaMaxima());
     }
 }
+ //muestraa quien golpeamos cuanto daño le hicimos y la vida actual y vida maxima

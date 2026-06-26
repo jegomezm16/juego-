@@ -29,7 +29,7 @@ public class Guerrero extends Personaje {
 
     @Override
     public String atacar(Personaje objetivo, int tipoAtaque) throws AccionInvalidaException {
-        StringBuilder log = new StringBuilder();
+        StringBuilder log = new StringBuilder(); //recibe a quien atacar el ataque elegido y sin notiene estamina sale el error
 
         if (tipoAtaque == 1) {
             log.append(String.format("⚔️  %s lanza un espadazo rápido!\n", this.nombre));
@@ -87,7 +87,7 @@ public class Guerrero extends Personaje {
     public String defender() {
         int recuperacion = 20;
         this.estamina = Math.min(this.estamina + recuperacion, this.estaminaMaxima);
-        return String.format(
+        return String.format(    //evita el error de mas estamina
             "🛡️  %s adopta una postura defensiva firme.\n" +
             "    Recupera %d de estamina. Estamina actual: %d/%d",
             this.nombre, recuperacion, this.estamina, this.estaminaMaxima
@@ -104,4 +104,4 @@ public class Guerrero extends Personaje {
         return String.format("%s recibió %d de daño. Vida: %d/%d\n",
             objetivo.getNombre(), danioReal, objetivo.getVida(), objetivo.getVidaMaxima());
     }
-}
+} //muestraa quien golpeamos cuanto daño le hicimos y la vida actual y vida maxima

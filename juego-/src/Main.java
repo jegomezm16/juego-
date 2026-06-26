@@ -19,7 +19,7 @@ public class Main {
         System.out.print("Ingresa el nombre de tu personaje: ");
         scanner.nextLine();                   // limpia buffer
         String nombreJugador = scanner.nextLine().trim();
-        if (nombreJugador.isEmpty()) nombreJugador = (opcion == 1) ? "Thorin" : "Gandalf";
+        if (nombreJugador.isEmpty()) nombreJugador = (opcion == 1) ? "Thorin" : "Gandalf";// nombres predeterminados
 
         Personaje jugador;
         if (opcion == 1) {
@@ -157,10 +157,11 @@ public class Main {
     private static int leerEntero(Scanner sc) {
         if (sc.hasNextInt()) {
             int val = sc.nextInt();
-            sc.nextLine();   // limpiar salto de línea
+            sc.nextLine();  // limpiar salto de línea  cuandp sin est linea cuando el jugador presinona enteren la siguente linea lo lee
+
             return val;
         } else {
-            sc.nextLine();   // descartar entrada inválida
+            sc.nextLine();   // descarta entrada inválida limpia el escaner de textos invalidos
             return -1;
         }
     }
